@@ -42,11 +42,11 @@ Question or topic --> Office-hours session --+--> Q&A log --> Follow-up: kata, A
 Proposed; created when the first session is agreed.
 
 ```text
-sessions\
-  <yyyy-mm-dd>-<topic>\
+sessions/
+  <yyyy-mm-dd>-<topic>/
     notes.md      agenda, questions, answers, follow-ups
-    slides\       only when the session has slides
-    demos\        only when the session has demos or sample code
+    slides/       only when the session has slides
+    demos/        only when the session has demos or sample code
 ```
 
 ## Progress
@@ -66,6 +66,8 @@ sessions\
 | Repo | Role |
 | --- | --- |
 | [architecture-learning-hub](https://github.com/Blackbaud-ViswanathaSwamyPK/architecture-learning-hub) | Index of all my architecture-learning repos |
+| [tdd-in-practice](https://github.com/Blackbaud-ViswanathaSwamyPK/tdd-in-practice) | Test-driven development katas that follow-ups can become |
+| [clean-code-in-practice](https://github.com/Blackbaud-ViswanathaSwamyPK/clean-code-in-practice) | Clean code exercises that follow-ups can become |
 | [engineering-governance](https://github.com/Blackbaud-ViswanathaSwamyPK/engineering-governance) | Shared AI-assisted engineering standards |
 
 ## License
