@@ -1,0 +1,33 @@
+// Shared source in engineering-governance; edit there and run scripts/sync-governance.ps1.
+{
+  "globs": ["**/*.md"],
+  "ignores": [
+    "**/node_modules/**",
+    "**/.npm/**",
+    "**/.pnpm-store/**",
+    "**/.venv/**",
+    "**/venv/**",
+    "**/.tox/**",
+    "**/.nox/**",
+    "**/__pycache__/**",
+    "**/.pytest_cache/**",
+    "**/.mypy_cache/**",
+    "**/.ruff_cache/**",
+    "**/.git/**",
+    "**/.vs/**",
+    "**/.idea/**",
+    "**/.history/**",
+    "**/coverage/**",
+    "**/htmlcov/**",
+    "**/[Tt]est[Rr]esults/**",
+    "**/playwright-report/**",
+    "**/test-results/**",
+    "**/[Bb]in/**",
+    "**/[Oo]bj/**",
+    "**/dist/**",
+    "**/build/**",
+    "**/out/**",
+    "**/artifacts/**",
+    "**/.next/**"
+  ]
+}
