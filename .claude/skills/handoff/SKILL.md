@@ -23,7 +23,7 @@ If all work is finished, mark an existing plan `State: done`; do not create a ne
 ## Status (<yyyy-mm-dd>)
 
 - State: in progress
-- Branch: <branch>; uncommitted changes: <yes/no>
+- Branch: <branch>; based on: <origin/main or the earlier day branch it carries>; unpushed commits: <n>; uncommitted changes: <yes/no>
 - Concept and agreed scope: <Swamy's concept and decisions, or awaiting Swamy's concept>
 - Done: <item> (verified by <command or check>)
 - Validation: <exact command, result, and any failed/skipped checks>
@@ -43,4 +43,5 @@ Do not call a step done because code was written: record "implemented, not verif
 
 ## 4. Report
 
-Give the plan file path and a three-line summary. Do not commit unless the user asks.
+Give the plan file path and a three-line summary. Do not commit or push unless the user asks.
+If commits exist only locally or the branch is unmerged, say so: `start-work` will carry that branch forward tomorrow, but only pushed work survives a lost machine.

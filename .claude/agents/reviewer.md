@@ -29,6 +29,7 @@ For a full audit, read every in-scope source line and its generated counterpart.
    - Rules: no secrets, no hand edits to managed files, README and docs updated when behavior or commands changed, and anything `AGENTS.repo.md` requires (such as its definition of done).
    - Text: typos, wrong paths, broken links, stale examples.
    - README presentation: exactly seven distinct relevant medium-tone badges, with truthful status; useful Mermaid diagrams have adjacent fenced ASCII fallbacks with equivalent nodes, connections, and direction. Distinguish syntax validation from rendered checks.
+   - Branch safety: work is on a day branch, not `main`; a new day branch carries earlier unmerged work instead of cutting from `origin/main`; nothing deleted, no submodule pointer moved, and no unpushed commits discarded without Swamy asking.
    - Governance: rules do not contradict skills/agents; memory is not task state; handoffs preserve validation evidence; always-on content stays under 200 lines.
    - Parity: discovery paths, frontmatter, body, glob scope, and tool aliases match documented support for each requested environment, not merely folder counts.
    - Evidence: tests prove the acceptance criteria, not a proxy. Distinguish checks actually run from proposed checks and live tool behavior that was not exercised.

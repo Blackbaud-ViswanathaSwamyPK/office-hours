@@ -88,7 +88,9 @@ Rules:
 
 - Conventional Commits: `feat:`, `fix:`, `test:`, `refactor:`, `docs:`, `chore:`.
 - GitHub repos: default branch is `main`. Always work on the day's branch `swamy/<ddmmm>-work` (for example `swamy/12oct-work`), never directly on `main`.
-  If it does not exist, create it from `origin/main`, unless an earlier day branch has commits not yet in `main`: then create it from that branch and say so. The `start-work` skill does this.
+- Unmerged work carries forward. Never cut a new day branch from `origin/main` while an earlier day branch has unmerged commits: base it on that branch's tip and say so. If several unmerged tips exist, ask.
+  A branch is merged only when its tip is in `main`, or when its merged PR's head commit equals its tip (squash merges). The `start-work` skill does this.
+- Never delete a branch, move a submodule pointer, or discard unpushed commits unless Swamy asks. Report unpushed commits instead.
 - The `C:\working` folder is a local-only git repo with no remote. Work on its `master` branch.
 - Every repo has a README with: purpose, how to build/run/test, and a progress or status section.
 - Every `README.md`, including nested READMEs, has exactly seven distinct, relevant badges, each with a different medium-tone color within that README (neither pale nor heavy/dark). Badges describe verified state or explicitly label planned tooling.

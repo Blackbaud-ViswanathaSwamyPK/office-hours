@@ -1,6 +1,6 @@
 ---
 name: start-work
-description: Use at the start of a work session in any repo under C:\working, before editing files, or when the user says "start work", brings a concept, requests a fresh start, or asks which branch to use. Safely selects the day branch, loads minimal repo state, and agrees the next step, verification, and relevant README badge/diagram checks with Swamy before implementation.
+description: Use at the start of a work session in any repo under C:\working, before editing files, or when the user says "start work", brings a concept, requests a fresh start, or asks which branch to use. Safely selects the day branch (carrying unmerged earlier-day work forward, never dropping it), loads minimal repo state, and agrees the next step, verification, and relevant README badge/diagram checks with Swamy before implementation.
 ---
 <!-- Managed by engineering-governance. Do not edit here; edit in engineering-governance and run scripts/sync-governance.ps1. -->
 
@@ -18,20 +18,30 @@ description: Use at the start of a work session in any repo under C:\working, be
 - Run `git fetch --prune --quiet`.
 - If a Git or GitHub command fails, report the error and stop branch selection; do not treat missing evidence as "no unmerged work".
 - If today's branch exists locally, `git switch` to it. If it exists only on `origin`, `git switch` to it (this tracks the remote).
-- Otherwise find earlier day branches with commits not in `main`:
+- Otherwise decide the base. Never cut from `origin/main` until every earlier day branch is proven merged.
+  1. List earlier day branches, local and remote, counting `swamy/x` and `origin/swamy/x` once:
 
-  ```bash
-  git for-each-ref --format='%(refname:short)' --no-merged origin/main refs/heads/swamy/ refs/remotes/origin/swamy/
-  ```
+     ```bash
+     git for-each-ref --format='%(refname:short)' refs/heads/swamy/ refs/remotes/origin/swamy/ | sed 's#^origin/##' | sort -u
+     ```
 
-  Count `swamy/x` and `origin/swamy/x` as one branch. A branch whose PR was squash-merged still shows up here;
-  check with `gh pr list --head swamy/x --state merged` (no `origin/` prefix) and treat it as merged.
-  - None: `git switch -c <today> --no-track origin/main`
-  - One: `git switch -c <today> --no-track <that branch>`, and tell the user the new branch carries its unmerged commits.
-  - More than one: ask the user which branch to start from.
+  2. For each branch `x`, use the local ref if it is ahead of `origin/x` (or has no remote), otherwise `origin/x`.
+     If local and `origin/x` have diverged, stop and ask. Note any commits that exist only locally (`git rev-list --count origin/x..x`).
+  3. Drop `x` as merged only if one of these holds:
+     - `git rev-list --count origin/main..x` is `0` (tip is in `main`).
+     - A merged PR's head commit equals the tip, which covers squash merges:
+       `gh pr list --head swamy/x --state merged --json headRefOid --jq '.[].headRefOid'` prints `git rev-parse x`.
+       Commits made after that PR's head are unmerged.
+  4. Among the rest, drop any branch that is an ancestor of another remaining one (`git merge-base --is-ancestor a b`). Stacked branches count once, as their tip.
+  5. Decide:
+     - None remain: `git switch -c <today> --no-track origin/main`
+     - One remains: `git switch -c <today> --no-track <that tip>`, and tell the user the new branch carries its unmerged commits.
+     - More than one: ask the user which tip to start from. Name each and say which are stacked or unpushed.
 
   `--no-track` matters: without it the new branch tracks `origin/main` (or the earlier branch), so a later `git pull` pulls from that branch and `git push` fails on the name mismatch.
   The first push, when the user asks for one, is `git push -u origin HEAD`.
+- Report merged earlier branches that are still present locally and offer to delete them. Delete only when the user says yes; a squash-merged branch needs `git branch -D`.
+- Report any unpushed commits found in step 2. Do not push them unless the user asks.
 
 ## 2. Load the state
 
