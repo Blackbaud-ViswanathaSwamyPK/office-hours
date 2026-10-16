@@ -51,16 +51,17 @@ Read only what tells you where things stand:
 - Open plans in `docs/plans/` (most recent first; skip plans whose status says `State: done`). Read the "Next" and "Blockers" lines.
 - The README progress or status section.
 
-Treat plans as a starting point, not proof: reconcile their branch, completed steps, and blockers with the current worktree. Do not read every historical plan or private memory file.
+Treat plans as a starting point, not proof: reconcile their branch, completed steps, and blockers with the current worktree. Do not read every historical plan, and do not open memory files; if an auto-loaded memory names a file, flag, or path, verify it against the repo before relying on it.
 
 ## 3. Agree the next step with Swamy
 
 - Swamy brings the concept; Swamy and AI develop it together. Use an already explicit request or recorded agreement when it covers the current step; do not ask for the same agreement again.
 - If no concept is supplied, ask Swamy and wait. A backlog, suggested kata, or stack default does not authorize implementation.
 - Before new scaffolding or code, clarify the concept's scope and examples, agree the language/stack and one small next step, and define its acceptance check.
-- When the step changes documentation, include exactly seven distinct badges with seven different medium-tone colors in every affected README and pair useful Mermaid diagrams with equivalent ASCII fallbacks. Do not claim unimplemented tooling in badges.
+- When the step changes documentation, include exactly seven distinct badges with seven different medium-tone colors in every affected README and pair useful medium-tone, role-colored Mermaid diagrams with equivalent ASCII fallbacks. Do not claim unimplemented tooling in badges.
 - For a fresh start, inventory the files and agree exact deletion boundaries before removing anything. Preserve Git history, governance infrastructure, and unrelated work unless explicitly included.
 
 ## 4. Report
 
-Three lines at most: branch (and where it came from, if new), uncommitted changes, and the agreed next step with its acceptance check (or "awaiting Swamy's concept").
+First check what you will report: `git branch --show-current` shows the intended branch and, for a carried branch, `git merge-base --is-ancestor <earlier tip> HEAD` succeeds.
+Then three lines at most: branch (and where it came from, if new), uncommitted changes, and the agreed next step with its acceptance check (or "awaiting Swamy's concept").

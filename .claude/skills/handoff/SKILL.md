@@ -33,11 +33,12 @@ If all work is finished, mark an existing plan `State: done`; do not create a ne
 
 Keep it short. Link to files and line numbers instead of copying code.
 Do not call a step done because code was written: record "implemented, not verified" when its acceptance check has not passed.
+Check before saving: re-run the cheapest check behind each Done item (or mark it "implemented, not verified"), and confirm every path and link in the plan resolves.
 
 ## 3. Update the durable places
 
 - A milestone finished: update the README progress or status section.
-- When updating a README, preserve exactly seven distinct, relevant badges with seven different medium-tone colors. Keep Mermaid diagrams and their adjacent ASCII fallbacks equivalent; record any unverified diagram checks.
+- When updating a README, preserve exactly seven distinct, relevant badges with seven different medium-tone colors. Keep medium-tone, role-colored Mermaid diagrams and their adjacent ASCII fallbacks equivalent; record any unverified diagram checks.
 - The user taught you a lasting convention: propose the exact line to add to `AGENTS.repo.md` (or to `engineering-governance` if it applies to every repo). Do not add it without agreement.
 - The plan is complete: change its status line to `State: done`, so `start-work` skips it.
 

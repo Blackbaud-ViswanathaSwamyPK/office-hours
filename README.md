@@ -29,6 +29,15 @@ flowchart LR
     session --> notes["Q&A log"]
     session --> material["Session material"]
     notes --> followup["Follow-up: kata, ADR, or next session"]
+
+    classDef inputRole fill:#5B9BD5,stroke:#2E4E6A,stroke-width:2px,color:#000000
+    classDef activityRole fill:#E0A458,stroke:#70522C,stroke-width:2px,color:#000000
+    classDef outputRole fill:#6BB38A,stroke:#365A45,stroke-width:2px,color:#000000
+    classDef nextRole fill:#9C7BC9,stroke:#4E3E64,stroke-width:2px,color:#000000
+    class question inputRole
+    class session activityRole
+    class notes,material outputRole
+    class followup nextRole
 ```
 
 ```text

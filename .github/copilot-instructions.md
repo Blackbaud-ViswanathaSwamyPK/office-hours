@@ -3,7 +3,8 @@
 
 # Engineering Standards (shared)
 
-Source of truth for AI-assisted work across my repos. It applies to Claude CLI, the Claude App, and GitHub Copilot.
+Source of truth for AI-assisted work across my repos. It applies to Claude Code (CLI, Desktop, VS Code extension) and GitHub Copilot (CLI, VS Code extension).
+Every rule, skill, and agent must work in both tools. General Claude App chats do not load repo files.
 Repo-specific rules live in `AGENTS.repo.md` in each repo.
 
 ## Working agreement
@@ -63,7 +64,8 @@ Rules:
 - The repo is the memory. Durable facts go in `AGENTS.repo.md`, the README, or an ADR, where every tool can read them.
 - Tool-private memory (such as Claude auto memory or Copilot Memory) holds only personal preferences and corrections that no repo records.
   Never store secrets there, and never copy repo content into it. Keep it small: Claude loads only the first 200 lines (or 25 KB) of `MEMORY.md` into every session.
-- If a memory and the repo disagree, the repo wins. Fix or delete the stale memory.
+- If a memory and the repo disagree, the repo wins. Fix or delete the stale memory: in Claude, `/memory` opens the memory files.
+  Copilot Memory is managed in `github.com/settings/copilot/memory` (personal) and the repo's Copilot settings (repo-level facts). Record a repo-level fact in the repo, not only there.
 - When the user corrects a convention, propose the line to add to `AGENTS.repo.md` or to `engineering-governance`.
 - Check private memory against current repo evidence before using it. Do not persist temporary task state or unverified conclusions as memory.
 
@@ -95,7 +97,7 @@ Rules:
 - The `C:\working` folder is a local-only git repo with no remote. Work on its `master` branch.
 - Every repo has a README with: purpose, how to build/run/test, and a progress or status section.
 - Every `README.md`, including nested READMEs, has exactly seven distinct, relevant badges, each with a different medium-tone color within that README (neither pale nor heavy/dark). Badges describe verified state or explicitly label planned tooling.
-- Where a diagram clarifies structure, relationships, or workflow, use Mermaid and an adjacent fenced `text` ASCII fallback showing the same nodes, connections, and direction. Keep both in sync; do not invent diagrams for plain reference text.
+- Where a diagram clarifies structure, relationships, or workflow, use Mermaid with medium-tone fills (neither pale nor dark), a darker border, black label text, and a distinct color per role or group, consistent within the diagram. Add an adjacent fenced `text` ASCII fallback showing the same nodes, connections, and direction; it needs no color. Keep both in sync; do not invent diagrams for plain reference text.
 - Record significant design decisions as short ADRs under `docs/adr/` (context, decision, consequences).
 
 ## Managed files
@@ -107,6 +109,7 @@ These files are generated from `engineering-governance` by `scripts/sync-governa
 - `.github/agents/*.agent.md` (generated Copilot CLI/cloud profiles)
 - `.claude/rules/*.md`, `.claude/skills/**`, `.claude/agents/*.md`
 - `.markdownlint.json`, `.markdownlint-cli2.jsonc`, `.github/workflows/markdownlint.yml`
+- `architecture-learning-hub.code-workspace` (working folder only)
 
 To change a rule, skill, or agent, edit it in `engineering-governance`, then run the sync script. Put repo-specific guidance in `AGENTS.repo.md`.
 
