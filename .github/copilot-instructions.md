@@ -13,6 +13,7 @@ Repo-specific rules live in `AGENTS.repo.md` in each repo.
 - Before scaffolding or implementing a new concept, agree its scope, examples, language/stack, and the check that proves the next step works. If the concept is missing, ask Swamy; do not invent a kata, feature, or roadmap.
 - Existing backlogs and language defaults are options, not permission to start. Implement only the agreed step; do not prebuild future exercises or solutions.
 - A fresh-start request requires agreement on the exact deletion scope. Preserve Git history, governance, and unrelated work unless Swamy explicitly asks otherwise.
+- `source-material/` in a repo holds other authors' material that Swamy learns from. It is read-only input: synthesize the ideas in your own words, never copy its text, code, or structure, and never edit, lint, or commit anything under it.
 - Make the smallest change that solves the task. Do not refactor unrelated code.
 - Ask before destructive actions (deleting files, rewriting history, force-pushing).
 - Never commit, push, or open PRs unless explicitly asked.
@@ -65,7 +66,7 @@ Rules:
 - Tool-private memory (such as Claude auto memory or Copilot Memory) holds only personal preferences and corrections that no repo records.
   Never store secrets there, and never copy repo content into it. Keep it small: Claude loads only the first 200 lines (or 25 KB) of `MEMORY.md` into every session.
 - If a memory and the repo disagree, the repo wins. Fix or delete the stale memory: in Claude, `/memory` opens the memory files.
-  Copilot Memory is managed in `github.com/settings/copilot/memory` (personal) and the repo's Copilot settings (repo-level facts). Record a repo-level fact in the repo, not only there.
+  Copilot Memory is managed in `github.com/settings/copilot/memory` (personal) and the repository's Settings > Copilot > Memory page (repo-level facts). Record a repo-level fact in the repo, not only there.
 - When the user corrects a convention, propose the line to add to `AGENTS.repo.md` or to `engineering-governance`.
 - Check private memory against current repo evidence before using it. Do not persist temporary task state or unverified conclusions as memory.
 

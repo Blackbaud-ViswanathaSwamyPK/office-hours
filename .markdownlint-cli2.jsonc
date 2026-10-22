@@ -28,6 +28,7 @@
     "**/build/**",
     "**/out/**",
     "**/artifacts/**",
-    "**/.next/**"
+    "**/.next/**",
+    "**/source-material/**"
   ]
 }
