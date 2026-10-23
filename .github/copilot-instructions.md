@@ -109,7 +109,7 @@ These files are generated from `engineering-governance` by `scripts/sync-governa
 - `.github/copilot-instructions.md`, `.github/instructions/*.instructions.md`
 - `.github/agents/*.agent.md` (generated Copilot CLI/cloud profiles)
 - `.claude/rules/*.md`, `.claude/skills/**`, `.claude/agents/*.md`
-- `.markdownlint.json`, `.markdownlint-cli2.jsonc`, `.github/workflows/markdownlint.yml`
+- `.markdownlint.json`, `.markdownlint-cli2.jsonc`, `.github/workflows/markdownlint.yml`, `.gitattributes`
 - `architecture-learning-hub.code-workspace` (working folder only)
 
 To change a rule, skill, or agent, edit it in `engineering-governance`, then run the sync script. Put repo-specific guidance in `AGENTS.repo.md`.

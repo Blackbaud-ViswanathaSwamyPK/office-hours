@@ -1,0 +1,16 @@
+# Shared source in engineering-governance; edit there and run scripts/sync-governance.ps1.
+# The sync writes managed files with LF line endings. These attributes keep Git from
+# warning about, or converting, those endings on Windows checkouts with core.autocrlf=true.
+AGENTS.md text eol=lf
+CLAUDE.md text eol=lf
+.gitattributes text eol=lf
+.markdownlint.json text eol=lf
+.markdownlint-cli2.jsonc text eol=lf
+architecture-learning-hub.code-workspace text eol=lf
+.github/copilot-instructions.md text eol=lf
+.github/instructions/*.instructions.md text eol=lf
+.github/agents/*.agent.md text eol=lf
+.github/workflows/markdownlint.yml text eol=lf
+.claude/rules/*.md text eol=lf
+.claude/skills/** text eol=lf
+.claude/agents/*.md text eol=lf
