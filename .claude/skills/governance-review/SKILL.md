@@ -42,5 +42,6 @@ description: Use when auditing rules, instructions, skills, agents, Claude/Copil
 - Mechanically review every changed line and generated output. Use `reviewer` for non-trivial changes; it does not replace your own review.
 - Check renamed references, relative links in changed docs, and line budgets. File generation proves file parity, not automatic skill invocation or live behavior.
 - Where available, check discovery in each tool's customization UI and a fresh session; GitHub cloud profiles need publishing to the appropriate branch before a live check.
+- In Claude Code, run `/doctor prompt-audit` (it checks CLAUDE.md, rules, skills, and subagents for outdated or conflicting content) and report its output as a live check, separate from file parity.
 - Report briefly: files changed, exact checks and results, skipped live checks, remaining limitations, and open questions. Leave review and commits to the user when requested.
 - If implementation or verification remains unfinished, run `handoff`; do not mark the work done.

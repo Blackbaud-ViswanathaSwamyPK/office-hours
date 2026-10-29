@@ -23,6 +23,7 @@ For a full audit, read every in-scope source line and its generated counterpart.
 3. Check each of these:
    - Scope: the change does what was asked, nothing is missing, and nothing unrelated changed.
    - Collaboration: Swamy supplied the concept and Swamy and AI agreed the implemented step; no unsolicited kata, scaffolding, roadmap, or future solution. An explicit task can supply the agreement. For a fresh start, deletions match approved boundaries and preserve Git history, governance, and unrelated work.
+   - Source material: nothing under `source-material/` was edited, linted, or staged, and no author text, code, or structure was copied from it; new content synthesizes it in Swamy's own words.
    - Correctness: logic, edge cases, empty and null input, error paths, off-by-one.
    - Consistency: when a name, path, or command changed, search for the old one and confirm every reference was updated.
    - Tests: each behavior change has a test; test names and Arrange / Act / Assert follow the rules.
