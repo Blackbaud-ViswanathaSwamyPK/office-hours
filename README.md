@@ -60,7 +60,7 @@ sessions/
 
 ## Progress
 
-Repository support: [conventions](CONVENTIONS.md), [corrections](CORRECTIONS.md), [editing coordination](SESSION_STATE.md), [handoff index](HANDOFF.md), and [knowledge index](memory.md). These supplement shared governance; they do not imply completed office-hours sessions.
+Repository support: [conventions](CONVENTIONS.md), [corrections](CORRECTIONS.md), [editing coordination](SESSION_STATE.md), [handoff index](HANDOFF.md), and [knowledge index](MEMORY.md). These supplement shared governance; they do not imply completed office-hours sessions.
 
 - Done: repository created.
 - Next: agree the first session's topic, scope, and material.

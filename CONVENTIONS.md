@@ -16,4 +16,4 @@ Local guidance supplements [AGENTS.repo.md](AGENTS.repo.md); shared standards re
 - Use the Markdown check in [README.md](README.md#getting-started); add demo commands only when they exist and are verified.
 - Read relevant entries in [CORRECTIONS.md](CORRECTIONS.md) before repeating the affected work.
 - Use [SESSION_STATE.md](SESSION_STATE.md) for AI editing coordination, not as the office-hours attendance or Q&A log.
-- Use [HANDOFF.md](HANDOFF.md) and [memory.md](memory.md) as indexes, not parallel task histories.
+- Use [HANDOFF.md](HANDOFF.md) and [MEMORY.md](MEMORY.md) as indexes, not parallel task histories.
