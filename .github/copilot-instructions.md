@@ -14,6 +14,11 @@ Repo-specific rules live in `AGENTS.repo.md` in each repo.
 - Existing backlogs and language defaults are options, not permission to start. Implement only the agreed step; do not prebuild future exercises or solutions.
 - A fresh-start request requires agreement on the exact deletion scope. Preserve Git history, governance, and unrelated work unless Swamy explicitly asks otherwise.
 - `source-material/` in a repo holds other authors' material that Swamy learns from. It is read-only input: synthesize the ideas in your own words, never copy its text, code, or structure, and never edit, lint, or commit anything under it.
+- Learning content must explain the ideas in an independently organized synthesis, using our own illustrative examples rather than the author's examples or renamed versions of them. Distinguish illustrations from agreed hands-on work.
+- When learning input changes or Swamy identifies a passage, read that material and compare its concepts with the maintained notes. Assess coverage and explanatory depth; existing filenames, prior checks, or a clean Git status do not prove the notes are current, especially for ignored input files.
+- Public-facing documents must be self-contained: never name or link `source-material/` or narrate private input files, missing private citations, or the synthesis process. Keep operational references in agent instructions and tooling only; preserve required attribution to identifiable external sources.
+- Start numbered content at one, never zero, including filenames, titles, and headings. Both `1` and `01` are valid; use one style consistently within a sequence. This governs authored content numbering, not technical syntax or read-only reference files.
+- Name sequential learning notes `01_topic_name.md`, `02_topic_name.md`, and so on in the agreed reading order; keep navigation and links consistent. This does not apply to README/index files, ADRs, governance files, or read-only source material. Renumber existing notes only within an agreed scope.
 - Make the smallest change that solves the task. Do not refactor unrelated code.
 - Ask before destructive actions (deleting files, rewriting history, force-pushing).
 - Never commit, push, or open PRs unless explicitly asked.
@@ -127,3 +132,5 @@ Copilot reads `.github/instructions/*.instructions.md`, and Claude reads `.claud
 - Record questions without attendee names unless they agree to be named. No secrets, credentials, or customer data. This repo is public.
 - Do not create a session folder until Swamy agrees its topic and scope.
 - Check all maintained Markdown before committing: `npx --yes markdownlint-cli2@0.23.3` from the repo root (Node.js 22+).
+- Before task edits, read repo-root `CONVENTIONS.md` and relevant `CORRECTIONS.md` entries. Check `SESSION_STATE.md` for overlapping work; it is advisory, not a lock.
+- Repo-root `HANDOFF.md` indexes unfinished plans; `MEMORY.md` indexes durable knowledge. Load their linked details only when relevant; neither replaces Git, the README, or shared governance.
