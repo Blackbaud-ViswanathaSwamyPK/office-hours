@@ -12,6 +12,7 @@ Native entry: `/repo-workflow` followed by the stage number and the same scope f
 
 ```text
 Use repo-workflow stage 1 in office-hours.
+Read .claude/skills/repo-workflow/SKILL.md and follow its contract.
 Concept: <session topic or question>.
 Agree audience needs without identities, scope, expected outcome, session
 date/slug if creating material, and whether notes, slides, or a demo are needed.
@@ -23,6 +24,7 @@ Do not create a session folder or invent questions/answers before agreement.
 
 ```text
 Use repo-workflow stage 2 in office-hours.
+Read .claude/skills/repo-workflow/SKILL.md and follow its contract.
 Scope: <agreed topic or existing session notes/material>.
 Check agenda, questions, evidence-backed answers, and unresolved follow-ups.
 Separate verified answers from assumptions; inspect demo behavior and tests
@@ -35,6 +37,7 @@ Propose one bounded material update; do not expand it into a course or exercise.
 
 ```text
 Use repo-workflow stage 3 in office-hours.
+Read .claude/skills/repo-workflow/SKILL.md and follow its contract.
 Approved step: <session date/slug, material, and exact scope>.
 Acceptance: <observable learning outcome or demo behavior>.
 Keep agenda, questions, answers, and follow-ups in
@@ -49,6 +52,7 @@ Propose exercise-sized follow-ups for another repo; do not implement them here.
 
 ```text
 Use repo-workflow stage 4 in office-hours.
+Read .claude/skills/repo-workflow/SKILL.md and follow its contract.
 Scope: <approved session material or demo>.
 Acceptance: <agreed outcome>.
 Check that each scoped question has an evidence-backed answer or an explicit
@@ -64,6 +68,7 @@ Do not publish, schedule, or create a follow-up session.
 
 ```text
 Use repo-workflow stage 5 in office-hours.
+Read .claude/skills/repo-workflow/SKILL.md and follow its contract.
 Scope: <completed or unfinished session preparation>.
 Retain topic, date/slug if agreed, material paths, verified answers, open
 questions, exact checks, next preparation step, and blockers.
