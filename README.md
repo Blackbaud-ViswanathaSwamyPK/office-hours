@@ -21,6 +21,11 @@ There is no code yet, so there are no build, run, or test commands. With Node.js
 npx --yes markdownlint-cli2@0.23.3
 ```
 
+## AI workflow prompts
+
+Use the [Claude guide](docs/prompts/01_claude_workflow.md) or [GHCP guide](docs/prompts/02_ghcp_workflow.md) for five selectable stages: agree, assess, complete, verify, and handoff.
+The shared [repo-workflow skill](.claude/skills/repo-workflow/SKILL.md) provides native invocation: `/repo-workflow` plus one stage number and its scope. Verify discovery in a fresh session; the guides also work as explicit copy/paste entry points.
+
 ## How it works
 
 ```mermaid
