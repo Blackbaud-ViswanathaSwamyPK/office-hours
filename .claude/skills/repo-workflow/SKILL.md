@@ -1,6 +1,6 @@
 ---
 name: repo-workflow
-description: Use when Swamy selects a repo-workflow stage or a repository's Claude/GHCP workflow prompt to agree a concept, assess gaps, complete one approved step, verify evidence, or hand off. Loads only the selected repo and stage; prompt maintenance never authorizes execution.
+description: Use when Swamy asks to run a repository's Claude/GHCP workflow, with or without a stage. Verify startup with start-work before selecting one stage to agree a concept, assess gaps, complete an approved step, verify evidence, or hand off. Prompt maintenance never authorizes execution.
 ---
 <!-- Managed by engineering-governance. Do not edit here; edit in engineering-governance and run scripts/sync-governance.ps1. -->
 
@@ -10,14 +10,14 @@ description: Use when Swamy selects a repo-workflow stage or a repository's Clau
 
 1. A request to create, edit, or review prompts is maintenance, not permission to execute them.
 2. Identify the intended repository from the user's request and verify its Git root. In a multi-root workspace, ask if the target is ambiguous. Never infer the target from the skill's installation directory.
-3. Select exactly one stage: **1 Agree**, **2 Assess**, **3 Complete**, **4 Verify**, or **5 Handoff**. A missing/invalid stage or an unresolved placeholder requires clarification, not a default or a run of every stage.
-4. Read the usage section and selected stage only from the target repo's guide: `docs/prompts/01_claude_workflow.md` for Claude Code, or `docs/prompts/02_ghcp_workflow.md` for GitHub Copilot. If the host is unknown, ask which guide to use; if the guide is absent, stop and report the missing path. Do not borrow another repo's guide.
-5. Guide prompts supply repo-specific scope; this skill supplies their shared execution contract. When a guide refers back to this skill, continue the current invocation rather than loading it again.
+3. Before asking for or selecting a stage, run [start-work](../start-work/SKILL.md). Reuse its verified state from this session only if Git and scope are unchanged. If startup is blocked, report the blocker and stop; do not switch branches with dirty files without approval or discard unmerged work.
+4. Select exactly one stage: **1 Agree**, **2 Assess**, **3 Complete**, **4 Verify**, or **5 Handoff**. A missing/invalid stage or an unresolved placeholder requires clarification, not a default or a run of every stage.
+5. Read the usage section and selected stage only from the target repo's guide: `docs/prompts/01_claude_workflow.md` for Claude Code, or `docs/prompts/02_ghcp_workflow.md` for GitHub Copilot. If the host is unknown, ask which guide to use; if the guide is absent, stop and report the missing path. Do not borrow another repo's guide.
+6. Guide prompts supply repo-specific scope; this skill supplies their shared execution contract. When a guide refers back to this skill, continue the current invocation rather than loading it again.
 
 ## Shared execution contract
 
 - Follow the repository's `AGENTS.md`, `AGENTS.repo.md`, and relevant scoped rules. Read `CONVENTIONS.md`, relevant `CORRECTIONS.md` entries, and `SESSION_STATE.md` when present. The coordination board is advisory, not a lock.
-- Use [start-work](../start-work/SKILL.md) at session startup; reuse its verified state within the same session unless Git or scope changed. Preserve dirty work and unmerged commits. A proposed branch switch with dirty files needs approval.
 - Reconcile the README and any relevant active plan or handoff index with Git. Do not load a whole backlog, historical plans, or private memory as a substitute for evidence.
 - State the concept, included and excluded files/behaviors, language/stack when relevant, and one observable acceptance check. Reuse explicit agreement; ask only for missing decisions. A backlog, default stack, or illustration is not authorization to implement.
 - Work on one selected stage and one agreed edit group. Stop when that stage is complete, a decision blocks it, or after 10 tool operations or 5 minutes, whichever occurs first. Count individual operations inside batches; let an in-flight check finish safely, report its result, and wait for "continue" before starting another block. Do not cancel validation solely to meet the limit.
