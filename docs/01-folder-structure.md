@@ -1,23 +1,61 @@
-# Understanding LLMs: session layout and demo plan
+# Folder structure
 
-This proposed 30-minute, no-code talk follows one question: how does a large
-language model turn a prompt into an answer, and how can we check that answer?
+Office-hours material belongs to the session where it is used. Repository
+guides and tooling live outside the session folders.
 
-## Where the material belongs
+## Layout
 
-Once the session date and scope are confirmed, use
-`sessions/<yyyy-mm-dd>-understanding-llms/` with the actual session date.
+```text
+office-hours/
+|-- README.md                    Start here: purpose, workflow, and progress
+|-- LICENSE                      Terms for reuse
+|-- AGENTS.md, AGENTS.repo.md    Shared standards and office-hours rules
+|-- CLAUDE.md                    Entry point for Claude Code
+|-- CONVENTIONS.md               How to prepare and check session material
+|-- SESSION_STATE.md             Coordination for concurrent repository edits
+|-- HANDOFF.md, MEMORY.md        Indexes of unfinished work and durable knowledge
+|-- CORRECTIONS.md               Verified mistakes and their corrections
+|-- .gitignore, .gitattributes   Git exclusions and file attributes
+|-- .markdownlint*.{json,jsonc}  Markdown check configuration
+|-- .claude/                     Rules, agents, and skills
+|-- .github/                     Copilot instructions, agents, and lint workflow
+|-- docs/
+|   |-- 01-folder-structure.md   This guide
+|   `-- prompts/                 Claude and Copilot repository workflow guides
+`-- sessions/                    Planned; no session folders exist yet
+    `-- <yyyy-mm-dd>-<topic>/    One folder per session, dated once
+        |-- notes.md             Agenda, demo prompts, Q&A, and follow-ups
+        `-- src/                 Optional; runnable demo code only
+```
 
-| Path within the session | What belongs there |
-| --- | --- |
-| `notes.md` | The timed agenda, anonymized questions, answers, and follow-ups. |
-| `demos/` | The fictional timetable and reusable prompts, if kept as separate files. |
-| `slides/` | The presentation deck, only if one is used. |
+## What belongs where
 
-If all three prompts fit in the notes, keep them there rather than creating
-empty folders.
+| Path | Holds | Keep out | Status |
+| --- | --- | --- | --- |
+| Repository root | Overview, license, rules, and coordination files | A talk's agenda or Q&A | Present |
+| `.claude/`, `.github/` | Assistant tooling and repository automation | Session examples | Present |
+| `docs/` | Guides for people maintaining this repository | Audience notes and runnable demos | Present |
+| `docs/prompts/` | Prompts for working on the repository | Prompts used to demonstrate a model during a talk | Present |
+| `sessions/<yyyy-mm-dd>-<topic>/` | One session's Markdown, starting with `notes.md` | Other sessions, slide decks, or customer data | Planned |
+| A session's `src/` | Code used to run that session's demos | Markdown-only demos or empty starter folders | Optional; not created |
 
-## Three live demos
+## Inside a session: Understanding LLMs
+
+Use one folder per session, named with the session date and topic. For this
+talk, use `sessions/<yyyy-mm-dd>-understanding-llms/` once the date and scope
+are confirmed. Keep the agenda, demo prompts, fictional timetable, anonymized
+Q&A, and follow-ups in `notes.md`. All three demos below can run from those
+notes; no slides or source files are needed.
+
+Add `src/` inside the session folder only for runnable demo code. For example,
+if a tokenizer is implemented later, put its code in `src/01_tokenization/`
+and link to it from the first demo in `notes.md`. Do not repeat the date under
+`src/` or create empty placeholder folders.
+
+### Example: what goes in the notes
+
+The proposed 30-minute session uses the following three demos and a closing
+discussion. Each demo needs only Markdown instructions, not its own folder.
 
 1. **See the tokens (5 minutes).** Enter `The night train leaves at 8:45.` in
    a tokenizer. Ask the audience to guess the token boundaries before revealing
@@ -38,3 +76,9 @@ empty folders.
 **Q&A and closing check (10 minutes):** Change the fare to `$15`. Ask someone
 to explain why the model can now give a different answer without retraining:
 the prompt changed, not the model's learned parameters.
+
+## Keeping the guide current
+
+Use [CONVENTIONS.md](../CONVENTIONS.md) when preparing a session. When the
+first session lands, update the tree, the status table, and the progress in the
+[README](../README.md). Mark `src/` present only when it contains demo code.

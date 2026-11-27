@@ -15,7 +15,7 @@ Use repo-workflow stage 1 in office-hours.
 Read .claude/skills/repo-workflow/SKILL.md and follow its contract.
 Concept: <session topic or question>.
 Agree audience needs without identities, scope, expected outcome, session
-date/slug if creating material, and whether notes, slides, or a demo are needed.
+date/slug if creating material, and whether the demo needs runnable code.
 Agree a stack and testable behavior only for an explicitly requested demo.
 Do not create a session folder or invent questions/answers before agreement.
 ```
@@ -41,7 +41,7 @@ Read .claude/skills/repo-workflow/SKILL.md and follow its contract.
 Approved step: <session date/slug, material, and exact scope>.
 Acceptance: <observable learning outcome or demo behavior>.
 Keep agenda, questions, answers, and follow-ups in
-sessions/<yyyy-mm-dd>-<topic>/notes.md. Add slides/ or demos/ only if agreed.
+sessions/<yyyy-mm-dd>-<topic>/notes.md. Add src/ only for agreed runnable demos.
 Keep unanswered questions explicit, cite checked facts, and omit personal data,
 credentials, and customer information. Do not manufacture attendance or answers.
 For a demo, use one intended failing test and the minimum passing behavior.

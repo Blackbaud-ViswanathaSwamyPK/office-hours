@@ -6,7 +6,7 @@ Local guidance supplements [AGENTS.repo.md](AGENTS.repo.md); shared standards re
 
 - Agree the topic, audience needs, scope, and expected outcome before creating a session folder.
 - Use `sessions/<yyyy-mm-dd>-<topic>/notes.md` for the agenda, questions, answers, and follow-ups.
-- Add `slides/` or `demos/` only when the agreed session needs them. Demo code follows test-first development.
+- Keep prompt-only demos in `notes.md`. Add `src/` inside the session folder only for runnable demo code, developed test-first. Do not create slide decks or empty folders.
 - Distinguish verified answers from assumptions and unanswered questions; cite sources for factual claims.
 - Keep notes free of personal data, secrets, credentials, and customer information. Use anonymized questions.
 - An exercise-sized follow-up belongs in the matching learning repo after scope is agreed, not in an expanding demo.

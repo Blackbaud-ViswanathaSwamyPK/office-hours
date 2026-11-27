@@ -12,7 +12,7 @@
 This repo keeps two things for each office-hours session:
 
 - **Q&A log**: the questions asked, the answers given, and any follow-ups.
-- **Session material**: the agenda, slides, demos, and sample code used in the session.
+- **Session material**: the Markdown agenda, demo prompts, and any runnable demo code.
 
 Swamy brings the topic for each session; Swamy and AI agree its scope and material before anything is added.
 There is no code yet, so there are no build, run, or test commands. With Node.js 22+ installed, check Markdown from the repo root before committing:
@@ -53,14 +53,13 @@ Question or topic --> Office-hours session --+--> Q&A log --> Follow-up: kata, A
 
 ## Layout
 
-Proposed; created when the first session is agreed.
+See the [folder structure guide](docs/01-folder-structure.md). The first session folder is planned, not yet created.
 
 ```text
 sessions/
   <yyyy-mm-dd>-<topic>/
     notes.md      agenda, questions, answers, follow-ups
-    slides/       only when the session has slides
-    demos/        only when the session has demos or sample code
+    src/          only when the session has runnable demo code
 ```
 
 ## Progress
@@ -73,7 +72,7 @@ Repository support: [conventions](CONVENTIONS.md), [corrections](CORRECTIONS.md)
 ## Ground rules
 
 - This repo is public. Record questions without attendee names unless they agree to be named.
-- No secrets, credentials, or customer data in notes, slides, or demos.
+- No secrets, credentials, or customer data in notes or demos.
 - Demo code follows the shared rules in `AGENTS.md`, including test-first for any code.
 - Follow-ups that become exercises go to the matching repo (for example `tdd-in-practice` or `clean-code-in-practice`), not here.
 
