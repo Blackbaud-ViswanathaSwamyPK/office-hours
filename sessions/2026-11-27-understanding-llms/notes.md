@@ -10,10 +10,52 @@ from the announcement.
 
 ## Agenda
 
-1. What happens between a prompt and a sentence? (8 minutes)
-2. What did the model learn before the conversation? (8 minutes)
-3. When is a language model the right choice? (6 minutes)
-4. Discuss what would make an answer trustworthy. (8 minutes)
+1. Where do LLMs fit within AI? (4 minutes)
+2. What happens between a prompt and a sentence? (6 minutes)
+3. What did the model learn before the conversation? (7 minutes)
+4. When is a language model the right choice? (5 minutes)
+5. Discuss what would make an answer trustworthy. (8 minutes)
+
+## The big picture: where LLMs fit
+
+Read the solid arrows from a broad field to a more specific approach.
+The dotted arrows answer a different question: *what can the model do?*
+
+```mermaid
+flowchart TD
+    AI["Artificial intelligence"] --> ML["Machine learning"]
+    ML --> DL["Deep learning"]
+    DL --> LLM["Large language models"]
+    DL --> IMG["Image diffusion models"]
+    LLM -. drafting text .-> GEN["Generative AI"]
+    IMG -. creating images .-> GEN
+    classDef field fill:#789CC2,stroke:#334E70,color:#000
+    classDef model fill:#75AD96,stroke:#345E50,color:#000
+    classDef use fill:#D5A361,stroke:#70512E,color:#000
+    class AI,ML,DL field
+    class LLM,IMG model
+    class GEN use
+```
+
+```text
+Artificial intelligence --> Machine learning --> Deep learning
+Deep learning --> Large language models ..(drafting text)..> Generative AI
+Deep learning --> Image diffusion models ..(creating images)..> Generative AI
+```
+
+Think of five questions the museum might ask:
+
+| Topic | Museum question | What makes it an example? |
+| --- | --- | --- |
+| Artificial intelligence (AI) | Which route visits every open gallery before closing? | A planner can search for a route using a map and explicit rules. AI includes reasoning and planning; it need not learn from data. |
+| Machine learning (ML) | How many visitors should we expect on Saturday? | A model learns patterns from past attendance rather than relying on a hand-written rule for every weekend. |
+| Deep learning | Which instrument appears in this concert photo? | A neural network with many layers can learn useful visual features from photos rather than requiring a curator to specify the shape of each instrument. |
+| Large language models (LLMs) | Does this notice say the concert moved or was cancelled? | An LLM is a deep network trained on large amounts of language. It can use the wording in context to assign a label or to draft a reply. |
+| Generative AI (GenAI) | Can we draft a new announcement or design a concert poster? | The defining feature is creating content. An LLM can write the announcement; an image diffusion model can create artwork by progressively removing noise. |
+
+**Discussion check:** Labeling an existing photo and creating new poster art
+can both use deep learning. Only the second task asks for new content. That
+is why *generative AI* and *large language model* are not interchangeable.
 
 ## Follow one sentence through the model
 
