@@ -3,7 +3,7 @@
 > Questions, answers, and session material from my software engineering office hours.
 
 <!-- markdownlint-disable-next-line MD013 -->
-![Office hours](https://img.shields.io/badge/Office%20Hours-Q%26A%20%2B%20Sessions-4F86A6?style=flat-square) ![Markdown content](https://img.shields.io/badge/Content-Markdown-568F80?style=flat-square&logo=markdown&logoColor=white) ![Q&A log planned](https://img.shields.io/badge/Q%26A%20Log-Planned-6F79A8?style=flat-square) ![Session material planned](https://img.shields.io/badge/Session%20Material-Planned-9B739A?style=flat-square) ![Demos planned](https://img.shields.io/badge/Demos-Planned-B18455?style=flat-square) ![Awaiting first session](https://img.shields.io/badge/Status-Awaiting%20First%20Session-A66F72?style=flat-square) ![MIT license](https://img.shields.io/badge/License-MIT-758493?style=flat-square)
+![Office hours](https://img.shields.io/badge/Office%20Hours-Q%26A%20%2B%20Sessions-4F86A6?style=flat-square) ![Markdown content](https://img.shields.io/badge/Content-Markdown-568F80?style=flat-square&logo=markdown&logoColor=white) ![Q&A log planned](https://img.shields.io/badge/Q%26A%20Log-Planned-6F79A8?style=flat-square) ![Session notes ready](https://img.shields.io/badge/Session%20Notes-Ready-9B739A?style=flat-square) ![Theory and discussion](https://img.shields.io/badge/Format-Theory%20%2B%20Discussion-B18455?style=flat-square) ![Understanding LLMs](https://img.shields.io/badge/Topic-Understanding%20LLMs-A66F72?style=flat-square) ![MIT license](https://img.shields.io/badge/License-MIT-758493?style=flat-square)
 
 [Getting started](#getting-started) · [How it works](#how-it-works) · [Layout](#layout) · [Progress](#progress) · [Ground rules](#ground-rules)
 
@@ -53,7 +53,7 @@ Question or topic --> Office-hours session --+--> Q&A log --> Follow-up: kata, A
 
 ## Layout
 
-See the [folder structure guide](docs/01-folder-structure.md). The first session folder is planned, not yet created.
+See the [folder structure guide](docs/01-folder-structure.md).
 
 ```text
 sessions/
@@ -66,8 +66,8 @@ sessions/
 
 Repository support: [conventions](CONVENTIONS.md), [corrections](CORRECTIONS.md), [editing coordination](SESSION_STATE.md), [handoff index](HANDOFF.md), and [knowledge index](MEMORY.md). These supplement shared governance; they do not imply completed office-hours sessions.
 
-- Done: repository created.
-- Next: agree the first session's topic, scope, and material.
+- Prepared: [27 November 2026 - Understanding LLMs](sessions/2026-11-27-understanding-llms/notes.md), a theory and discussion session.
+- Next: record anonymized questions and any agreed follow-ups after the discussion.
 
 ## Ground rules
 
